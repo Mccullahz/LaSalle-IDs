@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ID Card Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ID Card Generator</h1>
+  <div id="app">
+    <div>
+      <label for="dataFile">Data File (Data.csv):</label>
+      <input type="text" id="dataFile" readonly>
+      <button onclick="selectDataFile()">Select Data File</button>
+    </div>
+    <div>
+      <label for="studentCodesFile">Student Codes File (Student Codes.txt):</label>
+      <input type="text" id="studentCodesFile" readonly>
+      <button onclick="selectStudentCodesFile()">Select Student Codes File</button>
+    </div>
+    <div>
+      <label for="staffCodesFile">Staff Codes File (Staff Codes.txt):</label>
+      <input type="text" id="staffCodesFile" readonly>
+      <button onclick="selectStaffCodesFile()">Select Staff Codes File</button>
+    </div>
+    <div>
+      <label for="idTemplateFile">ID Template File (e.g., style.css):</label>
+      <input type="text" id="idTemplateFile" readonly>
+      <button onclick="selectIDTemplateFile()">Select ID Template File</button>
+    </div>
+    <div>
+      <button id="generateButton" onclick="generateIDCards()">Generate ID Cards</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
