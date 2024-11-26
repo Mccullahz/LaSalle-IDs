@@ -16,9 +16,9 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:     "ID Card Generator",
-		Width:     600,
-		Height:    400,
+		Title:     "ZyGuy is the best shitty dev<3",
+		Width:     960,
+		Height:    640,
 		Assets:    assets,
 		OnStartup: app.startup,
 		Bind: []interface{}{

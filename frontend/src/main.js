@@ -1,43 +1,38 @@
-
 import './style.css';
 
-async function selectDataFile() {
-  const filePath = await window.backend.App.SelectFile("Select Data.csv File");
+import * as App from '../wailsjs/go/main/App';
+import * as WailsRuntime from '../wailsjs/runtime';
+
+WailsRuntime.EventsOn("dataFileSelected", (filePath) => {
   document.getElementById("dataFile").value = filePath;
-}
+});
 
-async function selectStudentCodesFile() {
-  const filePath = await window.backend.App.SelectFile("Select Student Codes.txt File");
-  document.getElementById("studentCodesFile").value = filePath;
-}
-
-async function selectStaffCodesFile() {
-  const filePath = await window.backend.App.SelectFile("Select Staff Codes.txt File");
-  document.getElementById("staffCodesFile").value = filePath;
-}
-
-async function selectIDTemplateFile() {
-  const filePath = await window.backend.App.SelectFile("Select ID Template File");
+WailsRuntime.EventsOn("idTemplateFileSelected", (filePath) => {
   document.getElementById("idTemplateFile").value = filePath;
+});
+
+WailsRuntime.EventsOn("outputDirectorySelected", (directoryPath) => {
+  document.getElementById("outputDirectory").value = directoryPath;
+});
+
+function selectDataFile() {
+  App.SelectDataFile();
+}
+
+function selectIDTemplateFile() {
+  App.SelectIDTemplateFile();
+}
+
+function selectOutputDirectory() {
+  App.SelectOutputDirectory();
 }
 
 async function generateIDCards() {
-  const dataFile = document.getElementById("dataFile").value;
-  const studentCodesFile = document.getElementById("studentCodesFile").value;
-  const staffCodesFile = document.getElementById("staffCodesFile").value;
-  const idTemplateFile = document.getElementById("idTemplateFile").value;
-
-  if (!dataFile || !studentCodesFile || !staffCodesFile || !idTemplateFile) {
-    alert("Please select all required files before generating ID cards.");
-    return;
-  }
-
-  const result = await window.backend.App.GenerateIDCards({
-    dataFile,
-    studentCodesFile,
-    staffCodesFile,
-    idTemplateFile,
-  });
-
+  const result = await App.GenerateIDCards();
   alert(result);
 }
+
+document.getElementById('selectDataFileButton').addEventListener('click', selectDataFile);
+document.getElementById('selectIDTemplateFileButton').addEventListener('click', selectIDTemplateFile);
+document.getElementById('selectOutputDirectoryButton').addEventListener('click', selectOutputDirectory);
+document.getElementById('generateButton').addEventListener('click', generateIDCards);

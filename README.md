@@ -2,18 +2,15 @@
 
 ## About
 
-This is the official Wails Vanilla template.
+This is the official LaSalle Terrible ID Creation Tool. Currently the project is in it's earliest stages and there has yet to be a release. 
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+## Tooling
+The goal of this application is to systematize the currently existing tooling utilized to create ID's. 
+This application is created using Go alongside the Wails library for a GUI framework. Functionality is quite simple, as it is merely replacing a Powershell script, but allowing for far greater customization and previewing of the created identification files.
 
-## Live Development
+## Dependencies
+In order to properly run this application, it is required to have access to all internal files, including but not limited to the student data. This is NOT included in the application or any existing repositories.
+Additionally it is required to have the Zint application installed for printing.
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
-
-## Building
-
-To build a redistributable, production mode package, use `wails build`.
+## Installation
+Currently, there are no releases, thus no installation options. However, if this application does gain interest, you can simply create a fork of the repository and build with Wails independently.

@@ -1,0 +1,46 @@
+html, body, iframe {
+	margin: 0;
+	padding: 0;
+	display: block;
+	border:0;
+}
+
+iframe {
+	width: 2.125in;
+	height: 3.375in;
+}
+
+pre {
+	display:none;
+}
+
+@page {
+	size: 2.125in 3.375in;
+	margin:0;
+	padding:0;
+}
+
+.page {
+    page-break-after: always;
+}
+
+.pageNumber {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+@media screen {
+	iframe {
+		border: 1px solid #666;
+		margin: 0 auto 1em;
+		border-radius: .1in;
+	}
+	pre {
+		display:block;
+		margin:1.2em 0 .1em;
+		text-align:center;
+		font-family: Consolas, monospace;
+	}
+}
