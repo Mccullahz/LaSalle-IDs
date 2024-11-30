@@ -2,6 +2,12 @@ html {
     box-sizing: border-box; 
 }
 
+h1 {
+    margin-bottom: 20px;
+    text-align: center; 
+    color: #383934;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -10,29 +16,36 @@ body {
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    background-color: #010305;
-    color: #b1b1b1;
+    background-color: #e2dbd2;
+    color: #383934;
     -webkit-tap-highlight-color: transparent;
     transition: background-color var(--duration);
+    line-height: 3;
 }
 
-h1 {
-    margin-bottom: 20px;
-    text-align: center; 
+input, button {
+    font-size: 14px;
+    height: 35px;
+    padding: 0 1px; 
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: #303030;
-    color: #ffffff;
-    border: none;
+    background-color: #ccc4bc;
+    color: #383934;
     cursor: pointer;
     transition: background-color var(--duration);
 }
 
+input {
+    margin-right: 10px; /* Adds space between input and button */
+}
+
 @media screen and (max-width: 50em) {
     .menu {
-        font-size: .8em;
+        font-size: 0.8em;
     }
 }

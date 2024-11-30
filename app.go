@@ -211,6 +211,7 @@ func (a *App) GenerateIDCards() string {
 
 	for idx, record := range records {
 		fmt.Printf("Processing %d/%d: %s %s\n", idx+1, len(records), record.FirstName, record.LastName)
+		fmt.Print("First: ", record.FirstName, "Last: ", record.LastName, "\n")
 		var barcodeSVG string
 		if record.LunchID != "" && record.LunchID != "000000" {
 			barcodeSVG, err = generateBarcode(record.LunchID)
